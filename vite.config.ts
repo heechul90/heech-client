@@ -14,7 +14,18 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": "http://localhost:9000",
+      "/auth": {
+        target: "http://localhost:10001",
+        changeOrigin: true,
+      },
+      "/api/members": {
+        target: "http://localhost:10001",
+        changeOrigin: true,
+      },
+      "/api/posts": {
+        target: "http://localhost:10002",
+        changeOrigin: true,
+      }
     }
   }
 });
