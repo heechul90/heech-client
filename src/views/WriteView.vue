@@ -40,6 +40,8 @@ const write = function () {
 
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+
+
 
 </style>

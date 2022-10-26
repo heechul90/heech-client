@@ -1,52 +1,44 @@
+<script setup lang="ts">
+import {ref} from "vue";
+import axios from "axios";
+import {useRouter} from "vue-router";
+
+const email = ref("");
+const password = ref("");
+const name = ref("");
+
+const router = useRouter();
+
+const signup = function () {
+  axios
+      .post("/auth/signup", {
+        email: email.value,
+        password: password.value,
+        name: name.value,
+      })
+      .then(() => {
+        router.replace({name: "login"})
+      });
+};
+
+</script>
+
 <template>
 
-  <div class="sign-up">
+  <div class="container">
     <p>회원가입</p>
-    <input type="text" placeholder="email"><br>
-    <input type="password" placeholder="password"><br>
-    <button>가입하기</button>
+    <el-input v-model="email" placeholder="이메일을 입력하세요."/>
+    <el-input v-model="password" placeholder="비밀번호를 입력하세요."/>
+    <el-input v-model="name" placeholder="이름을 입력하세요."/>
+
+    <el-button type="primary" @click="signup()">가입하기</el-button>
     <span>또는 로그인으로 돌아가기</span>
   </div>
 
 </template>
 
-<script>
-export default {
-  name: "SginupView",
-  data() {
-    return {
-
-    }
-  },
-  methods: {
-
-  }
-}
-</script>
-
 <style scoped lang="scss">
 
-.signUp {
-  margin-top: 40px;
-}
-input {
-  margin: 10px 0;
-  width: 20%;
-  padding: 15px;
-}
-button {
-  margin-top: 20px;
-  width: 10%;
-  cursor: pointer;
-}
-p {
-  margin-top: 40px;
-  font-size: 20px;
-}
-span {
-  display: block;
-  margin-top: 20px;
-  font-size: 15px;
-}
+
 
 </style>
