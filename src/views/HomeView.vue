@@ -29,7 +29,7 @@ axios
       </div>
       <div class="sub d-flex">
         <div class="category">개발</div>
-        <div class="regDate">2022-09-11</div>
+        <div class="createdDate">{{post.createdDate}}</div>
       </div>
     </li>
   </ul>

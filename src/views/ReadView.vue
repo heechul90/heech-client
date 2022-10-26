@@ -13,7 +13,8 @@ const props = defineProps({
 const post = ref({
   postId: 0,
   postTitle: "",
-  postContent: ""
+  postContent: "",
+  hits: 0
 });
 
 const moveToEdit = () => {

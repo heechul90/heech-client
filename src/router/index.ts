@@ -3,6 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import WriteView from "../views/WriteView.vue";
 import ReadView from "../views/ReadView.vue";
 import EditView from "../views/EditView.vue";
+import LoginView from "../views/LoginView.vue";
+import SignupView from '../views/SignupView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,7 +17,7 @@ const router = createRouter({
     {
       path: "/write",
       name: "write",
-      component: WriteView
+      component: WriteView,
     },
     {
       path: "/read/:postId",
@@ -28,6 +30,16 @@ const router = createRouter({
       name: "edit",
       component: EditView,
       props: true
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: LoginView,
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignupView,
     },
   ],
 });

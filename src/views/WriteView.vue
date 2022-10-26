@@ -12,8 +12,8 @@ const router = useRouter();
 const write = function () {
   axios
       .post("/api/posts", {
-        title: title.value,
-        content: content.value
+        postTitle: title.value,
+        postContent: content.value
       })
       .then(() => {
         router.replace({name: "home"})
